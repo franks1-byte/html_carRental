@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — CarX Rental</title>
+<style>
+/* GENERAL */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff4500, #ff0066);
+    animation: headerMove 10s infinite alternate;
+    box-shadow: 0 0 20px #ff4500;
+}
+
+@keyframes headerMove {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* NAV */
+nav {
+    background: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #ff4500;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: url('aboutbg.jpg') center/cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #ff4500;
+}
+
+/* ABOUT CARDS */
+.about-box {
+    padding: 40px 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ff4500;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #000;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff4500;
+}
+
+/* TEAM SECTION */
+.team {
+    text-align: center;
+    padding: 20px;
+}
+
+.team h2 {
+    margin-bottom: 15px;
+    font-size: 35px;
+    text-shadow: 0 0 15px #ff0066;
+}
+
+.team-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.team-card {
+    background: #1c1c1c;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #ff0066;
+    transition: 0.3s;
+}
+
+.team-card img {
+    width: 100%;
+    height: 200px;       /* fixed box height */
+    border-radius: 10px;
+    object-fit: cover;   /* keeps aspect ratio, crops to box */
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff0066;
+}
+
+/* CONTACT SECTION */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ff4500;
+}
+
+.map-placeholder {
+    background:#333;
+    height:200px;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#777;
+}
+
+/* FOOTER */
+footer {
+    flex-shrink: 0; /* sticky at bottom */
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #777;
+    box-shadow: 0 -2px 10px #ff4500aa;
+    font-weight: bold;
+}
+
+.map-placeholder {
+    display: block;              
+    margin: 0 auto;              
+    height: 200px;               
+    width: 100%;                 
+    max-width: 700px;            
+    object-fit: cover;           
+    
+    border-radius: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" class="logo" alt="CarX Logo">
+    <h1>CarX Rental — About Us</h1>
+</header>
+
+<nav>
+    <a href="home.html"> Home</a>
+    <a href="rent.html"> Rent</a>
+    <a href="cars.html"> Cars</a>
+    <a href="pricing.html"> Pricing</a>
+    <a href="about.html"> About</a>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-content">
+        <h2>Drive With Confidence</h2>
+        <p>We provide high-quality, reliable, and affordable cars for your journey.</p>
+    </div>
+</div>
+
+<!-- ABOUT CARDS -->
+<div class="about-box">
+    <div class="card">
+        <h3>🔥 Who We Are</h3>
+        <p>CarX Rental is a premium car rental service offering top-tier vehicles for business, leisure, and travel.</p>
+    </div>
+
+    <div class="card">
+        <h3>🚗 Our Story</h3>
+        <p>Started by passionate car lovers, we set out to create the most trusted and stylish rental service.</p>
+    </div>
+
+    <div class="card">
+        <h3>⭐ Why Choose Us</h3>
+        <ul>
+            <li>Affordable rates</li>
+            <li>Fast customer service</li>
+            <li>Safe and clean vehicles</li>
+            <li>30+ car models</li>
+        </ul>
+    </div>
+</div>
+
+<!-- TEAM SECTION -->
+<div class="team">
+    <h2>Our Team</h2>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="team12.jpg" alt="">
+            <p> — Founder</p>
+        </div>
+
+        <div class="team-card">
+            <img src="team2.jpg" alt="Lebron James">
+            <p>Lebron James — Manager</p>
+        </div>
+
+        <div class="team-card">
+            <img src="team3.jpg" alt="Max Verstappen">
+            <p>Max Verstappen — Mechanic</p>
+        </div>
+
+        <div class="team-card">
+            <img src="team4.jpg" alt="Elon Musk">
+            <p>Elon Musk — Customer Support</p>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact">
+    <div class="contact-box">
+        <h2>📍 Contact Us</h2>
+        <p>Email: support@carx.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <p>Location: Cagayan de Oro City, Philippines</p>
+
+
+<img src="map.png" alt="Map Location" class="map-placeholder">
+
+    </div>
+</div>
+
+<footer>
+    © 2025 CarX Rental — All Rights Reserved
+</footer>
+
+</body>
+</html>

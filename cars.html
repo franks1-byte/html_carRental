@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarX – Rent a Car</title>
+
+<style>
+body {
+    background:#121212;
+    margin:0;
+    color:white;
+    font-family:Arial;
+}
+
+/* Header */
+header {
+    background:#ff4500;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+}
+
+/* Back button */
+.back {
+    display:block;
+    width:150px;
+    margin:20px auto;
+    text-align:center;
+    padding:10px;
+    border:2px solid #ff4500;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+}
+.back:hover { background:#ff4500; }
+
+/* Car grid */
+.car-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:15px;
+    padding:20px;
+}
+.car-card {
+    text-align:center;
+}
+.car-card img {
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid #ff4500;
+    transition:0.3s;
+}
+.car-card img:hover {
+    transform:scale(1.05);
+}
+
+/* FULLSCREEN VIEWER */
+.fullscreen {
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    opacity:0;
+    transition:0.3s;
+}
+.fullscreen img {
+    width:90%;
+    max-width:800px;
+    border-radius:12px;
+}
+.fullscreen:target {
+    visibility:visible;
+    opacity:1;
+}
+.close-btn {
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:50px;
+    color:white;
+    text-decoration:none;
+}
+
+/* Form */
+.form-box {
+    max-width:400px;
+    margin:40px auto;
+    padding:20px;
+    background:#1d1d1d;
+    border:2px solid #ff4500;
+    border-radius:12px;
+}
+label { display:block; margin-top:10px; }
+input, select {
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:8px;
+    border:none;
+}
+button {
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#ff4500;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+button:hover { background:#e13e00; }
+
+/* Make the page use full height and flex layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content (everything except footer) should grow */
+header,
+nav,
+.hero,
+.pricing-container {
+    flex: 1 0 auto; /* allow growing */
+}
+
+/* Footer sticks to bottom */
+footer {
+    flex-shrink: 0; /* never shrink */
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #777;
+    box-shadow: 0 -2px 10px #ff4500aa;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Rent a Car</header>
+<a class="back" href="home.html">← Back to Home</a>
+
+<h2 style="text-align:center;">Choose Your Car</h2>
+
+<!-- ================= CAR GRID (30 CARS) ================= -->
+
+<div class="car-grid">
+
+<!-- 1–10 -->
+<div class="car-card"><a href="#car1"><img src="car1.jpg"></a><p>Toyota Vios</p></div>
+<div class="car-card"><a href="#car2"><img src="car2.jpg"></a><p>Honda Civic</p></div>
+<div class="car-card"><a href="#car3"><img src="car3.jpg"></a><p>Ford Mustang</p></div>
+<div class="car-card"><a href="#car4"><img src="car4.jpg"></a><p>Hyundai Staria</p></div>
+<div class="car-card"><a href="#car5"><img src="car5.jpg"></a><p>Nissan Almera</p></div>
+<div class="car-card"><a href="#car6"><img src="car6.jpg"></a><p>Toyota Fortuner</p></div>
+<div class="car-card"><a href="#car7"><img src="car7.jpg"></a><p>Mitsubishi Mirage</p></div>
+<div class="car-card"><a href="#car8"><img src="car8.jpg"></a><p>Kia Stonic</p></div>
+<div class="car-card"><a href="#car9"><img src="car9.jpg"></a><p>Hyundai Accent</p></div>
+<div class="car-card"><a href="#car10"><img src="car10.jpg"></a><p>Toyota Corolla</p></div>
+
+<!-- 11–20 -->
+<div class="car-card"><a href="#car11"><img src="car11.jpg"></a><p>Toyota Hilux</p></div>
+<div class="car-card"><a href="#car12"><img src="car12.jpg"></a><p>Honda City</p></div>
+<div class="car-card"><a href="#car13"><img src="car13.jpg"></a><p>BMW M3</p></div>
+<div class="car-card"><a href="#car14"><img src="car14.jpg"></a><p>Mercedes C200</p></div>
+<div class="car-card"><a href="#car15"><img src="car15.jpg"></a><p>Audi A4</p></div>
+<div class="car-card"><a href="#car16"><img src="car16.jpg"></a><p>Porsche 911</p></div>
+<div class="car-card"><a href="#car17"><img src="car17.jpg"></a><p>Tesla Model 3</p></div>
+<div class="car-card"><a href="#car18"><img src="car18.jpg"></a><p>Jeep Wrangler</p></div>
+<div class="car-card"><a href="#car19"><img src="car19.jpg"></a><p>Range Rover Evoque</p></div>
+<div class="car-card"><a href="#car20"><img src="car20.jpg"></a><p>Mazda 3</p></div>
+
+<!-- 21–30 -->
+<div class="car-card"><a href="#car21"><img src="car21.jpg"></a><p>Mitsubishi Montero</p></div>
+<div class="car-card"><a href="#car22"><img src="car22.jpg"></a><p>Toyota Innova</p></div>
+<div class="car-card"><a href="#car23"><img src="car23.jpg"></a><p>Suzuki Ertiga</p></div>
+<div class="car-card"><a href="#car24"><img src="car24.jpg"></a><p>Ford Ranger</p></div>
+<div class="car-card"><a href="#car25"><img src="car25.jpg"></a><p>Kia Picanto</p></div>
+<div class="car-card"><a href="#car26"><img src="car26.jpg"></a><p>Honda BR-V</p></div>
+<div class="car-card"><a href="#car27"><img src="car27.jpg"></a><p>Mazda CX-5</p></div>
+<div class="car-card"><a href="#car28"><img src="car28.jpg"></a><p>Hyundai Tucson</p></div>
+<div class="car-card"><a href="#car29"><img src="car29.jpg"></a><p>Toyota Camry</p></div>
+<div class="car-card"><a href="#car30"><img src="car30.jpg"></a><p>Chevrolet Trailblazer</p></div>
+
+</div>
+
+<!-- ================= FULLSCREEN POPUPS ================= -->
+
+<!-- Repeat 30 fullscreen viewers -->
+<div id="car1" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car1.jpg"></div>
+<div id="car2" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car2.jpg"></div>
+<div id="car3" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car3.jpg"></div>
+<div id="car4" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car4.jpg"></div>
+<div id="car5" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car5.jpg"></div>
+<div id="car6" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car6.jpg"></div>
+<div id="car7" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car7.jpg"></div>
+<div id="car8" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car8.jpg"></div>
+<div id="car9" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car9.jpg"></div>
+<div id="car10" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car10.jpg"></div>
+
+<div id="car11" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car11.jpg"></div>
+<div id="car12" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car12.jpg"></div>
+<div id="car13" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car13.jpg"></div>
+<div id="car14" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car14.jpg"></div>
+<div id="car15" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car15.jpg"></div>
+<div id="car16" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car16.jpg"></div>
+<div id="car17" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car17.jpg"></div>
+<div id="car18" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car18.jpg"></div>
+<div id="car19" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car19.jpg"></div>
+<div id="car20" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car20.jpg"></div>
+
+<div id="car21" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car21.jpg"></div>
+<div id="car22" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car22.jpg"></div>
+<div id="car23" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car23.jpg"></div>
+<div id="car24" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car24.jpg"></div>
+<div id="car25" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car25.jpg"></div>
+<div id="car26" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car26.jpg"></div>
+<div id="car27" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car27.jpg"></div>
+<div id="car28" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car28.jpg"></div>
+<div id="car29" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car29.jpg"></div>
+<div id="car30" class="fullscreen"><a href="#" class="close-btn">&times;</a><img src="car30.jpg"></div>
+
+<footer>
+    © 2025 CarX Rental — All Rights Reserved
+</footer>
+
+
+</body>
+</html>

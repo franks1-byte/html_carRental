@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarX Rental – Home</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#131313, #2e2e2e);
+    color: white;
+}
+header {
+    padding: 20px;
+    text-align: center;
+    background: #ff4500;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: #ff4500;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 18px;
+    border: 2px solid #ff4500;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: #ff4500;
+}
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+.hero h1 {
+    font-size: 3rem;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.card {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ff4500;
+    text-align: center;
+}
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+/* Make the page use full height and flex layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content (everything except footer) should grow */
+header,
+nav,
+.hero,
+.pricing-container {
+    flex: 1 0 auto; /* allow growing */
+}
+
+/* Footer sticks to bottom */
+footer {
+    flex-shrink: 0; /* never shrink */
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #777;
+    box-shadow: 0 -2px 10px #ff4500aa;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+
+<header>
+    <img src="logo.jpg" class="logo" alt="CarX Logo">
+    <div>
+        <h1> CarX Rental</h1>
+        <p>Drive your dream today.</p>
+    </div>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="cars.html">Cars</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="rent.html">Rent Now</a>
+</nav>
+
+<div class="hero">
+    <h1>Premium Cars. Low Prices.</h1>
+    <p>Fast. Reliable. Spicy. The best rental in town.</p>
+</div>
+
+<div class="cards">
+    <div class="card">🔥 Sports Cars</div>
+    <div class="card">💼 Business Class</div>
+    <div class="card">👨‍👩‍👦 Family Cars</div>
+    <div class="card">🌍 Travel Vans</div>
+</div>
+
+<footer>
+    © 2025 CarX Rental — All Rights Reserved
+</footer>
+
+</body>
+</html>
